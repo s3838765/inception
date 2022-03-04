@@ -2,7 +2,18 @@ import styled from 'styled-components'
 
 export const Title = styled.h1`
   text-align: center;
-  font-size: 2rem;
+  font-size: 4rem;
+
+  .type::after {
+    content: '|';
+    animation: cursor 1.1s infinite step-start;
+  }
+
+  @keyframes cursor {
+    50% {
+      opacity: 0;
+    }
+  }
 `
 
 export const Image = styled.div`
@@ -14,7 +25,7 @@ export const Image = styled.div`
   height: 40rem;
 `
 
-export const Portrait = styled.img`
+export const PixelArt = styled.img`
   width: 55rem;
   display: block;
   margin: auto;
@@ -23,10 +34,8 @@ export const Portrait = styled.img`
   right: 6.5rem;
 `
 
-export const Circle = styled.div`
-  background-color: #bc83f1;
+export const BackgroundCircle = styled.div`
   border-radius: 50%;
-  display: block;
   margin: auto;
   position: absolute;
   width: 40rem;
