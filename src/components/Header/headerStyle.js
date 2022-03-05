@@ -35,7 +35,7 @@ export const Image = styled.div`
 
 export const BackgroundCircle = styled.div`
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
   width: 40rem;
   height: 40rem;
 
