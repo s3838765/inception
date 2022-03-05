@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <Title>
-        <TypeAnimation cursor={false} sequence={['Thomas Dib']} />
+        <TypeAnimation cursor={false} sequence={[1000, 'Thomas Dib']} />
       </Title>
 
       <Image>

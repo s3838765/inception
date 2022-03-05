@@ -6,6 +6,7 @@ export const HeaderContainer = styled.div`
 `
 
 export const Title = styled.h1`
+  height: 6rem;
   text-align: center;
   font-size: 4rem;
 `
