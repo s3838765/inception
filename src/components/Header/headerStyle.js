@@ -14,6 +14,12 @@ export const Title = styled.h1`
 export const Image = styled.div`
   margin: 0 auto;
   width: 40rem;
+  @media (max-width: 800px) {
+    // background-color: red;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 `
 
 export const BackgroundCircle = styled.div`
@@ -21,6 +27,11 @@ export const BackgroundCircle = styled.div`
   position: fixed;
   width: 40rem;
   height: 40rem;
+
+  @media (max-width: 800px) {
+    width: 23rem;
+    height: 23rem;
+  }
 `
 
 export const PixelArt = styled.img`
@@ -29,4 +40,9 @@ export const PixelArt = styled.img`
   position: relative;
   top: 3rem;
   right: 6.5rem;
+
+  @media (max-width: 800px) {
+    width: 30rem;
+    right: 0;
+  }
 `
