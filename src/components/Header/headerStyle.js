@@ -1,19 +1,12 @@
 import styled from 'styled-components'
 
+export const HeaderContainer = styled.div`
+  position: relative;
+`
+
 export const Title = styled.h1`
   text-align: center;
   font-size: 4rem;
-
-  .type::after {
-    content: '|';
-    animation: cursor 1.1s infinite step-start;
-  }
-
-  @keyframes cursor {
-    50% {
-      opacity: 0;
-    }
-  }
 `
 
 export const Image = styled.div`
