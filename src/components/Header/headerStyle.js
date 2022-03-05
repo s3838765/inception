@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.div`
   position: relative;
+  height: fit-content;
 `
 
 export const Title = styled.h1`
@@ -10,10 +11,13 @@ export const Title = styled.h1`
 `
 
 export const Image = styled.div`
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
+  margin: 0 auto;
+  width: 40rem;
+`
+
+export const BackgroundCircle = styled.div`
+  border-radius: 50%;
+  position: fixed;
   width: 40rem;
   height: 40rem;
 `
@@ -21,16 +25,7 @@ export const Image = styled.div`
 export const PixelArt = styled.img`
   width: 55rem;
   display: block;
-  margin: auto;
   position: relative;
   top: 3rem;
   right: 6.5rem;
-`
-
-export const BackgroundCircle = styled.div`
-  border-radius: 50%;
-  margin: auto;
-  position: absolute;
-  width: 40rem;
-  height: 40rem;
 `

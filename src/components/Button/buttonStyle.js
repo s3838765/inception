@@ -15,7 +15,7 @@ export const ButtonContainer = styled.button`
     background-color: #d4d4d4;
   }
 
-  margin-top: 400%;
+  margin-top: 5rem;
 `
 
 export const ButtonImage = styled.span`
