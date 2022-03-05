@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.a54906f3.js",
-    "static/js/787.31cd656f.chunk.js": "/static/js/787.31cd656f.chunk.js",
-    "static/media/watchingyou.apng": "/static/media/watchingyou.43b9bd84aec2e2e1dcfe.apng",
-    "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.a54906f3.js.map": "/static/js/main.a54906f3.js.map",
-    "787.31cd656f.chunk.js.map": "/static/js/787.31cd656f.chunk.js.map"
+    "main.css": "/inception/static/css/main.073c9b0a.css",
+    "main.js": "/inception/static/js/main.0d4eba2c.js",
+    "static/js/787.31cd656f.chunk.js": "/inception/static/js/787.31cd656f.chunk.js",
+    "static/media/watchingyou.apng": "/inception/static/media/watchingyou.43b9bd84aec2e2e1dcfe.apng",
+    "index.html": "/inception/index.html",
+    "main.073c9b0a.css.map": "/inception/static/css/main.073c9b0a.css.map",
+    "main.0d4eba2c.js.map": "/inception/static/js/main.0d4eba2c.js.map",
+    "787.31cd656f.chunk.js.map": "/inception/static/js/787.31cd656f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.a54906f3.js"
+    "static/js/main.0d4eba2c.js"
   ]
 }
