@@ -1,9 +1,9 @@
 import React from 'react'
 import { ButtonContainer, ButtonImage, ButtonText } from './buttonStyle'
 
-const Button = ({ icon, text }) => {
+const Button = ({ link, icon, text }) => {
   return (
-    <a href={'https://github.com/s3838765'} target={'_blank'}>
+    <a href={link} target={'_blank'}>
       <ButtonContainer>
         <ButtonImage>{icon}</ButtonImage>
         <ButtonText>{text}</ButtonText>

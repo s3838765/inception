@@ -9,7 +9,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 const Links = () => {
   return (
     <LinksContainer>
-      <Button icon={<FontAwesomeIcon icon={faGithub} />} text={'GitHub'} />
+      <Button link={'https://github.com/s3838765'} icon={<FontAwesomeIcon icon={faGithub} />} text={'GitHub'} />
     </LinksContainer>
   )
 }

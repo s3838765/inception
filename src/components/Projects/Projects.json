@@ -1,0 +1,44 @@
+{
+  "1": {
+    "name": "Inception",
+    "technologies": ["React"],
+    "description": "The site you are currently looking at.",
+    "image": "inception.png",
+    "link": "https://github.com/s3838765/inception"
+  },
+  "2": {
+    "name": "VSFS (Very Simple File System)",
+    "technologies": ["Java"],
+    "description": "A text based file system that allows you to store any type of file.",
+    "image": "vsfs.png",
+    "link": "https://github.com/s3838765/VSFS"
+  },
+  "3": {
+    "name": "Maze Pathfinder",
+    "technologies": ["C++"],
+    "description": "A pathfinder that navigates ASCII mazes.",
+    "image": "maze-pathfinder.png",
+    "link": "https://github.com/s3838765/maze-pathfinder"
+  },
+  "4": {
+    "name": "Qwirkle [Private]",
+    "technologies": ["C++"],
+    "description": "A CLI implementation of the board game Qwirkle.",
+    "image": "qwirkle.png",
+    "link": "https://github.com/s3838765/qwirkle"
+  },
+  "5": {
+    "name": "Bookaroo [Private]",
+    "technologies": ["React", "Spring Boot"],
+    "description": "A book purchasing site with multiple user functionality.",
+    "image": "bookaroo.png",
+    "link": ""
+  },
+  "6": {
+    "name": "ShopIt [WIP]",
+    "technologies": ["React-Native", "Firebase"],
+    "description": "A mobile application for collaborative shopping lists.",
+    "image": "shopit.png",
+    "link": "https://github.com/s3838765/ShopIt"
+  }
+}

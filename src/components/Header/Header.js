@@ -1,20 +1,16 @@
 import React from 'react'
 import TypeAnimation from 'react-type-animation'
-import { HeaderContainer, Title, Image, BackgroundCircle, PixelArt } from './headerStyle.js'
-import portrait from '../../images/watchingyou.apng'
+import { HeaderContainer, Title } from './headerStyle.js'
+import HeaderImage from '../HeaderImage/HeaderImage'
 
-const Header = () => {
-  const hue = Math.floor(Math.random() * 360)
+const Header = ({ hue }) => {
   return (
     <HeaderContainer>
       <Title>
         <TypeAnimation cursor={false} sequence={[1000, 'Thomas Dib']} />
       </Title>
 
-      <Image>
-        <BackgroundCircle style={{ backgroundColor: `hsl(${hue}, 50%, 50%)` }} />
-        <PixelArt src={portrait} />
-      </Image>
+      <HeaderImage hue={hue} />
     </HeaderContainer>
   )
 }
