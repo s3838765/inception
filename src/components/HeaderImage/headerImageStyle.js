@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
 export const Image = styled.div`
+  display: flex;
   margin: 0 auto;
   width: 40rem;
+  justify-content: center;
 
   @media (max-width: 800px) {
     width: 100%;
@@ -18,8 +20,8 @@ export const Image = styled.div`
 export const BackgroundCircle = styled.div`
   border-radius: 50%;
   position: absolute;
-  width: 40rem;
-  height: 40rem;
+  width: 30rem;
+  height: 30rem;
 
   @media (max-width: 800px) {
     width: 23rem;
@@ -28,11 +30,10 @@ export const BackgroundCircle = styled.div`
 `
 
 export const PixelArt = styled.img`
-  width: 55rem;
+  width: 38rem;
   display: block;
   position: relative;
-  top: 3.25rem;
-  right: 6.5rem;
+  top: 4.75rem;
 
   @media (max-width: 800px) {
     width: 30rem;
