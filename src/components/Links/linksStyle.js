@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const LinksContainer = styled.div`
   // position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 
   width: 100%;
