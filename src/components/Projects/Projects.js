@@ -1,7 +1,6 @@
 import React from 'react'
 
 import {
-  ProjectsHeading,
   AllProjectsContainer,
   ProjectContainer,
   InfoContainer,
@@ -9,6 +8,7 @@ import {
   Technology,
   Description,
   Image,
+  TitleContainer,
 } from './projectsStyle'
 
 import projectList from './Projects.json'
@@ -18,14 +18,16 @@ const Project = ({ id, inverseAlign = false, hue }) => {
     <>
       <ProjectContainer>
         <InfoContainer>
-          <Title href={projectList[id].link} target={'_blank'}>
-            {projectList[id].name}
-          </Title>
-          {projectList[id].technologies.map((technology) => (
-            <Technology key={technology} style={{ backgroundColor: `hsl(${hue}, 50%, 50%)` }}>
-              {technology}
-            </Technology>
-          ))}
+          <TitleContainer>
+            <Title href={projectList[id].link} target={'_blank'}>
+              {projectList[id].name}
+            </Title>
+            {projectList[id].technologies.map((technology) => (
+              <Technology key={technology} style={{ backgroundColor: `hsl(${hue}, 50%, 50%)` }}>
+                {technology}
+              </Technology>
+            ))}
+          </TitleContainer>
           <Description>{projectList[id].description}</Description>
         </InfoContainer>
         {inverseAlign ? (

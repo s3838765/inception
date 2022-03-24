@@ -29,12 +29,18 @@ export const InfoContainer = styled.div`
   }
 `
 
+export const TitleContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+`
+
 export const Title = styled.a`
   font-size: 2.5rem;
   font-weight: bold;
   text-decoration: none;
   color: black;
-  margin-right: 1rem;
 `
 
 export const Technology = styled.span`
