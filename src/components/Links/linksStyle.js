@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 export const LinksContainer = styled.div`
-  // position: relative;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
 
-  width: 100%;
-  height: max-content;
-  overflow: auto;
+  margin-bottom: 3rem;
 
-  margin-bottom: 5rem;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
 `

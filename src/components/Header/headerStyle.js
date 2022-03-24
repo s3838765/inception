@@ -1,9 +1,6 @@
 import styled from 'styled-components'
 
-export const HeaderContainer = styled.div`
-  // position: relative;
-  // height: fit-content;
-`
+export const HeaderContainer = styled.div``
 
 export const Title = styled.h1`
   height: 6rem;
