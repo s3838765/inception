@@ -22,7 +22,7 @@ const Project = ({ id, inverseAlign = false, hue }) => {
             <Title href={projectList[id].link} target={'_blank'}>
               {projectList[id].name}
             </Title>
-            {projectList[id].technologies.map((technology) => (
+            {projectList[id].technologies.map(technology => (
               <Technology key={technology} style={{ backgroundColor: `hsl(${hue}, 50%, 50%)` }}>
                 {technology}
               </Technology>
@@ -30,6 +30,7 @@ const Project = ({ id, inverseAlign = false, hue }) => {
           </TitleContainer>
           <Description>{projectList[id].description}</Description>
         </InfoContainer>
+
         {inverseAlign ? (
           <Image style={{ float: 'left' }} src={projectList[id].image} />
         ) : (

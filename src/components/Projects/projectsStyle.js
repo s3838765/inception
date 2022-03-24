@@ -9,10 +9,12 @@ export const AllProjectsContainer = styled.div`
   margin: 15rem auto;
   padding: 0 1.5rem;
 `
+
 export const ProjectContainer = styled.div`
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 `
 
