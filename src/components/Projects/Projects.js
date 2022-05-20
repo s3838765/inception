@@ -8,6 +8,7 @@ import {
   Technologies,
   Technology,
   Description,
+  ImageLink,
   Image,
 } from './projectsStyle'
 
@@ -31,9 +32,9 @@ const Project = ({ id, inverseAlign = false, hue }) => {
           <Description>{projectList[id].description}</Description>
         </InfoContainer>
 
-        <a href={projectList[id]?.live} target='_blank'>
+        <ImageLink href={projectList[id]?.live} target='_blank'>
             <Image src={projectList[id].image} live={projectList[id].live} inverseAlign={inverseAlign}/>
-        </a>
+        </ImageLink>
       </ProjectContainer>
     </>
   )
