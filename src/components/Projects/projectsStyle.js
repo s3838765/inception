@@ -19,7 +19,9 @@ export const ProjectContainer = styled.div`
 `
 
 export const InfoContainer = styled.div`
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
   max-width: 40%;
   padding-left: 2.5%;
   padding-right: 2.5%;
@@ -31,24 +33,23 @@ export const InfoContainer = styled.div`
   }
 `
 
-export const TitleContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem;
-`
-
 export const Title = styled.a`
+  display: block;
   font-size: 2.5rem;
   font-weight: bold;
   text-decoration: none;
   color: black;
 `
 
+export const Technologies = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+`
+
 export const Technology = styled.span`
   width: fit-content;
   padding: 0.3rem 1rem;
-  margin-right: 1rem;
   border-radius: 2rem;
   font-style: italic;
   vertical-align: super;
@@ -60,14 +61,19 @@ export const Technology = styled.span`
 `
 
 export const Description = styled.p`
+  margin: 0;
   font-size: 1.2rem;
 `
 
 export const Image = styled.img`
-  display: inline-block;
   width: 50%;
   padding-left: 2.5%;
   padding-right: 2.5%;
+  float: ${p => p.inverseAlign ? 'left' : 'right'};
+
+  :hover {
+    filter: ${p => p.live && 'brightness(0.75)'};
+  }
 
   @media (max-width: 800px) {
     width: 80%;

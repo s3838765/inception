@@ -5,10 +5,10 @@ import {
   ProjectContainer,
   InfoContainer,
   Title,
+  Technologies,
   Technology,
   Description,
   Image,
-  TitleContainer,
 } from './projectsStyle'
 
 import projectList from './Projects.json'
@@ -18,24 +18,22 @@ const Project = ({ id, inverseAlign = false, hue }) => {
     <>
       <ProjectContainer>
         <InfoContainer>
-          <TitleContainer>
-            <Title href={projectList[id].link} target={'_blank'}>
-              {projectList[id].name}
-            </Title>
+          <Title href={projectList[id].link} target={'_blank'}>
+            {projectList[id].name}
+          </Title>
+          <Technologies>
             {projectList[id].technologies.map(technology => (
               <Technology key={technology} style={{ backgroundColor: `hsl(${hue}, 50%, 50%)` }}>
                 {technology}
               </Technology>
             ))}
-          </TitleContainer>
+          </Technologies>
           <Description>{projectList[id].description}</Description>
         </InfoContainer>
 
-        {inverseAlign ? (
-          <Image style={{ float: 'left' }} src={projectList[id].image} />
-        ) : (
-          <Image style={{ float: 'right' }} src={projectList[id].image} />
-        )}
+        <a href={projectList[id]?.live} target='_blank'>
+            <Image src={projectList[id].image} live={projectList[id].live} inverseAlign={inverseAlign}/>
+        </a>
       </ProjectContainer>
     </>
   )

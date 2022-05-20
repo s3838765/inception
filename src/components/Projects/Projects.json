@@ -4,21 +4,24 @@
     "technologies": ["React", "Express"],
     "description": "A web application built with cloud services for personal or collaborative checklists.",
     "image": "listthis.png",
-    "link": "https://github.com/tdib/listthis"
+    "link": "https://github.com/tdib/listthis",
+    "live": "https://listthis.tdib.xyz"
   },
   {
     "name": "Automatarium",
     "technologies": ["React", "Express"],
     "description": "A modern take on JFLAP intended to be used for the Computing Theory course at RMIT University.",
     "image": "automatarium.png",
-    "link": "https://github.com/automatarium/automatarium"
+    "link": "https://github.com/automatarium/automatarium",
+    "live": "http://automatarium.giraugh.xyz"
   },
   {
     "name": "Inception",
     "technologies": ["React"],
     "description": "The site you are currently looking at.",
     "image": "inception.png",
-    "link": "https://github.com/tdib/inception"
+    "link": "https://github.com/tdib/inception",
+    "live": "https://tdib.xyz"
   },
   {
     "name": "Bookaroo",
