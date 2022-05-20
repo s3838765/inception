@@ -5,7 +5,12 @@
     "description": "A web application built with cloud services for personal or collaborative checklists.",
     "image": "listthis.png",
     "link": "https://github.com/tdib/listthis",
-    "live": "https://listthis.tdib.xyz"
+    "live": "https://listthis.tdib.xyz",
+    "prompt": [
+      "Click here to view a live version of ListThis!",
+      "Wow... I wish there was a simple web application to create checklists... Oh wait, there's one under your mouse!",
+      "Click this to List This!"
+    ]
   },
   {
     "name": "Automatarium",
@@ -13,7 +18,12 @@
     "description": "A modern take on JFLAP intended to be used for the Computing Theory course at RMIT University.",
     "image": "automatarium.png",
     "link": "https://github.com/automatarium/automatarium",
-    "live": "http://automatarium.giraugh.xyz"
+    "live": "http://automatarium.giraugh.xyz",
+    "prompt": [
+      "Click here to view a live version of Automatarium!",
+      "Do you like automata? If so, click here to view the project!",
+      "Clicking here will AUTOMATAke you to Automatarium :)"
+    ]
   },
   {
     "name": "Inception",
@@ -21,7 +31,12 @@
     "description": "The site you are currently looking at.",
     "image": "inception.png",
     "link": "https://github.com/tdib/inception",
-    "live": "https://tdib.xyz"
+    "live": "https://tdib.xyz",
+    "prompt": [
+      "Click here if you want a new tab of the same site :^)",
+      "You're already on the site but if you want another instance, just click here.",
+      "Click here to view a live version of tdib.xyz! Wait... You're already here!"
+    ]
   },
   {
     "name": "Bookaroo",

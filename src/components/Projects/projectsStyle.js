@@ -7,31 +7,39 @@ export const AllProjectsContainer = styled.div`
   max-width: 100rem;
   justify-content: center;
   margin: 15rem auto;
-  padding: 0 1.5rem;
+  padding: 0 5rem;
 
   @media (max-width: 800px) {
-    gap: 9rem;
+    gap: 12rem;
   }
 `
 
 export const ProjectContainer = styled.div`
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  grid-template-areas: 'image info';
+  gap: 5rem;
+
+  ${p => p.inverseAlign && `
+    grid-template-areas: 'info image';
+  `}
+
   @media (max-width: 800px) {
     display: flex;
+    gap: 1.5rem;
     flex-direction: column;
     align-items: center;
   }
 `
 
 export const InfoContainer = styled.div`
+  grid-area: info;
   display: inline-flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 1rem;
-  max-width: 40%;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
   word-wrap: break-word;
   white-space: normal;
+
 
   @media (max-width: 800px) {
     text-align: center;
@@ -78,25 +86,54 @@ export const Description = styled.p`
 `
 
 export const ImageLink = styled.a`
+  position: relative;
+  grid-area: image;
+  display: block;
+  text-decoration: none;
+
+  :hover {
+    img {
+      filter: ${p => p.live && 'brightness(0.4) blur(4px)'};
+    }
+    span {
+      opacity: 1;
+    }
+  }
+
+
   @media (max-width: 800px) {
     display: flex;
-    max-width: 95%;
+    max-width: 85%;
     justify-content: center;
   }
 `
 
 export const Image = styled.img`
-  width: 50%;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
-  float: ${p => p.inverseAlign ? 'left' : 'right'};
-
-  :hover {
-    filter: ${p => p.live && 'brightness(0.75)'};
-  }
+  width: 100%;
+  object-fit: contain;
+  transition: all 0.2s ease;
+  
 
   @media (max-width: 800px) {
-    padding: 0;
-    width: 80%;
+    margin: 0;
   }
+`
+
+export const ImageCaption = styled.span`
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+
+  transition: all 0.2s ease;
+  font-size: 1.5rem;
+  display: flex;
+  color: white;
+  opacity: 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 `

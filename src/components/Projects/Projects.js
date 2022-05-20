@@ -10,6 +10,7 @@ import {
   Description,
   ImageLink,
   Image,
+  ImageCaption,
 } from './projectsStyle'
 
 import projectList from './Projects.json'
@@ -17,7 +18,7 @@ import projectList from './Projects.json'
 const Project = ({ id, inverseAlign = false, hue }) => {
   return (
     <>
-      <ProjectContainer>
+      <ProjectContainer inverseAlign={inverseAlign}>
         <InfoContainer>
           <Title href={projectList[id].link} target={'_blank'}>
             {projectList[id].name}
@@ -32,8 +33,11 @@ const Project = ({ id, inverseAlign = false, hue }) => {
           <Description>{projectList[id].description}</Description>
         </InfoContainer>
 
-        <ImageLink href={projectList[id]?.live} target='_blank'>
-            <Image src={projectList[id].image} live={projectList[id].live} inverseAlign={inverseAlign}/>
+        <ImageLink href={projectList[id]?.live} target='_blank' live={projectList[id].live}>
+            <Image src={projectList[id].image} />
+            <ImageCaption>
+              {projectList[id].prompt && projectList[id].prompt[Math.floor(Math.random() * projectList[id].prompt.length)]}
+            </ImageCaption>
         </ImageLink>
       </ProjectContainer>
     </>
