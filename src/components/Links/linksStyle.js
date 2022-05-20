@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 export const LinksContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 4rem;
 
   margin-bottom: 3rem;
 

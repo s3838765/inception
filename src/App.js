@@ -8,7 +8,6 @@ function App() {
   return (
     <div>
       <Header hue={hue} />
-      {/* <Links /> */}
       <Projects hue={hue} />
     </div>
   )

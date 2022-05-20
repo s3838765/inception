@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const Image = styled.div`
   display: flex;
   margin: 0 auto;
-  width: 40rem;
   justify-content: center;
 
   @media (max-width: 800px) {
