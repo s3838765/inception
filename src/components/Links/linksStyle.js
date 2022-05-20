@@ -7,7 +7,7 @@ export const LinksContainer = styled.div`
 
   margin-bottom: 3rem;
 
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
