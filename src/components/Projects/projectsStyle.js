@@ -90,10 +90,11 @@ export const ImageLink = styled.a`
   grid-area: image;
   display: block;
   text-decoration: none;
+  overflow: hidden;
 
   :hover {
     img {
-      filter: ${p => p.live && 'brightness(0.4) blur(4px)'};
+      filter: ${p => p.live && 'brightness(0.4) blur(1px)'};
     }
     span {
       opacity: 1;
@@ -109,10 +110,10 @@ export const ImageLink = styled.a`
 `
 
 export const Image = styled.img`
+  display: block;
   width: 100%;
   object-fit: contain;
-  transition: all 0.2s ease;
-  
+  transition: all 0.3s ease;
 
   @media (max-width: 800px) {
     margin: 0;
@@ -128,7 +129,7 @@ export const ImageCaption = styled.span`
   padding: 2rem;
   box-sizing: border-box;
 
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   font-size: 1.5rem;
   display: flex;
   color: white;
