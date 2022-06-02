@@ -11,6 +11,7 @@ export const AllProjectsContainer = styled.div`
 
   @media (max-width: 800px) {
     gap: 12rem;
+    padding: .75rem;
   }
 `
 
