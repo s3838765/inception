@@ -1,18 +1,5 @@
 [
   {
-    "name": "ListThis",
-    "technologies": ["React", "Express"],
-    "description": "A web application built with cloud services for personal or collaborative checklists.",
-    "image": "listthis.png",
-    "link": "https://github.com/tdib/listthis",
-    "live": "https://listthis.tdib.xyz",
-    "prompt": [
-      "Click here to view a live version of ListThis!",
-      "Wow... I wish there was a simple web application to create checklists... Oh wait, there's one under your mouse!",
-      "Click this to List This!"
-    ]
-  },
-  {
     "name": "Automatarium",
     "technologies": ["React", "Express"],
     "description": "A modern take on JFLAP intended to be used for the Computing Theory course at RMIT University.",
@@ -37,6 +24,13 @@
       "You're already on the site but if you want another instance, just click here.",
       "Click here to view a live version of tdib.xyz! Wait... You're already here!"
     ]
+  },
+  {
+    "name": "ListThis",
+    "technologies": ["React", "Express"],
+    "description": "A web application built with cloud services for personal or collaborative checklists.",
+    "image": "listthis.png",
+    "link": "https://github.com/tdib/listthis"
   },
   {
     "name": "Bookaroo",
