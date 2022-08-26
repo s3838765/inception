@@ -5,7 +5,7 @@
     "description": "A modern take on JFLAP intended to be used for the Computing Theory course at RMIT University.",
     "image": "automatarium.png",
     "link": "https://github.com/automatarium/automatarium",
-    "live": "http://automatarium.giraugh.xyz",
+    "live": "http://automatarium.tdib.xyz",
     "prompt": [
       "Click here to view a live version of Automatarium!",
       "Do you like automata? If so, click here to view the project!",
