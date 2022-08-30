@@ -1,0 +1,9 @@
+:root {
+  color-scheme: light dark;
+  --white: hsl(0, 0%, 95%);
+  --black: hsl(0, 0%, 5%);
+}
+
+body {
+
+}
