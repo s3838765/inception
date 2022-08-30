@@ -13,6 +13,17 @@
     ]
   },
   {
+    "name": "Elementary CA",
+    "technologies": ["HTML", "CSS", "Javascript"],
+    "description": "A simple implementation of Stephen Wolfram's elementary cellular automata.",
+    "image": "elementaryca.png",
+    "link": "https://github.com/tdib/elementaryca",
+    "live": "https://elementaryca.tdib.xyz",
+    "prompt": [
+      "Click here to view the elementary cellular automata playground!"
+    ]
+  },
+  {
     "name": "Inception",
     "technologies": ["React"],
     "description": "The site you are currently looking at.",
