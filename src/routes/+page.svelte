@@ -19,7 +19,7 @@
 
   // Set initial theme based on user's preference in localstorage
   let theme: string | null = null
-  onMount(async () => {
+  onMount(() => {
     theme = localStorage.getItem('theme')
     if (!theme) {
       let darkScheme = window.matchMedia('(prefers-color-scheme: dark)')
@@ -27,10 +27,6 @@
       localStorage.setItem('theme', theme)
     }
     document.body.classList.add(theme)
-
-
-    // TODO: unsubscribe?
-    return 
   })
 
   // When the user toggles the theme, set in localstorage
