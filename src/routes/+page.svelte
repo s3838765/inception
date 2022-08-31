@@ -1,2 +1,87 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+  import StyledPortrait from '$lib/components/StyledPortrait.svelte'
+  import Project from '$lib/components/Project.svelte'
+  import projects from '$lib/assets/projects.json'
+  import { onMount } from 'svelte'
+  import { Lightbulb, LightbulbOff } from 'lucide-svelte'
+
+  const randomHue = Math.floor(Math.random() * 360)
+  const colour = `hsl(${randomHue}, 50%, 50%)`
+
+
+  onMount(async () => {
+    let theme
+    let darkScheme = window.matchMedia('(prefers-color-scheme: dark)')
+    if (darkScheme.matches)
+        theme = document.body.classList.contains('light-mode') ? 'light' : 'dark'
+    else
+        theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light'
+    localStorage.setItem('theme', theme)
+
+    function toggleTheme() {
+      let currTheme = localStorage.getItem('theme');
+      if (currTheme == 'dark')
+        document.body.classList.toggle('light-mode');
+      else if (currTheme == 'light')
+        document.body.classList.toggle('dark-mode');
+    }
+
+    // TODO: unsubscribe?
+    return 
+  })
+
+  // let isDark = false
+</script>
+
+<div class='container'>
+  <div class='header'>
+    <h1>Thomas Dib</h1>
+    <StyledPortrait colour={colour} />
+  </div>
+  <!-- <button class='light-dark-button'>
+    {#if isDark}
+      <Lightbulb size={40}/>
+    {:else}
+      <LightbulbOff size={40}/>
+    {/if}
+  </button> -->
+
+  {#each projects as project, idx}
+    <Project {...project} reversed={idx % 2 === 1} colour={colour} />
+  {/each}
+
+</div>
+
+<style lang='scss'>
+  .container {
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7em;
+  }
+
+  .light-dark-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2em;
+    background: none;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+
+</style>
