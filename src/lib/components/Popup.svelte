@@ -41,6 +41,7 @@
 
     button {
       background-color: var(--colour);
+      color: var(--text);
       border: none;
       padding: .75em;
       border-radius: .25em;

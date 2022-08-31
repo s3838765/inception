@@ -4,7 +4,7 @@
   import Popup from '$lib/components/Popup.svelte'
   import projects from '$lib/assets/projects.json'
   import { onMount } from 'svelte'
-  import { Lightbulb, LightbulbOff, Github, Linkedin } from 'lucide-svelte'
+  import { Lightbulb, LightbulbOff, Github, Linkedin, ChevronUp } from 'lucide-svelte'
 
   // Set random hue and change the colour whenever the hue changes
   function getRandomHue() {
@@ -83,19 +83,27 @@
       </a>
     </div>
 
-    <StyledPortrait colour={colour} changeHue={() => {
-      randomHue = getRandomHue()
-    }} />
+    <StyledPortrait colour={colour} changeHue={() => {randomHue = getRandomHue()}} />
   </div>
 
+  <!-- List of projects -->
   {#each projects as project, idx}
     <Project {...project} reversed={idx % 2 === 1} theme={theme} colour={colour} />
   {/each}
-
 </div>
+
+<a href='#top' title='Back to top' class='back-to-top'>
+  <ChevronUp />
+</a>
 
 <style lang='scss'>
   .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7em;
+    padding: 5em;
+
     *:focus-visible {
       outline: 3px solid var(--colour);
       border-radius: .1em;
@@ -116,9 +124,6 @@
         margin-block: 2em;
 
         @media (max-width: 500px) {
-          flex-direction: column;
-          gap: 1em;
-          margin-block-start: 1em;
         }
         
         a {
@@ -133,11 +138,6 @@
         }
       }
     }
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 7em;
   }
 
   .light-dark-button {
@@ -147,14 +147,33 @@
     margin: 2em;
     background: none;
     border: none;
+    color: var(--text);
 
     &:hover {
       cursor: pointer;
     }
-
-    color: var(--text);
   }
 
+  .back-to-top {
+    color: var(--text);
+    background-color: var(--surface);
+    border-radius: 1em 1em 0em 0em;
+    display: flex;
+    width: 5em;
+    justify-content: center;
+    margin-inline: auto;
+  }
 
+  @media (max-width: 500px) {
+    .container {
+      padding: 2em;
+    }
+
+    .social-links {
+      flex-direction: column;
+      gap: 1em;
+      margin-block-start: 1em;
+    }
+  }
 
 </style>

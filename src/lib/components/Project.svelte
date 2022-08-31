@@ -35,7 +35,7 @@
 
 <div class='project-container {reversed && 'reversed'}' style='--colour: {colour}'>
   <div class='info-container'>
-    <a href={link} target='_blank' >{name}</a>
+    <a href={link} target='_blank' title='View source code'>{name}</a>
 
     <div class='technologies-container'>
       {#each technologies as technology}
@@ -46,7 +46,7 @@
     <span>{description}</span>
   </div>
 
-  <a href={live} target='_blank' class={randomPrompt && 'live-link'}>
+  <a href={live} target='_blank' title={randomPrompt && 'View live version'} class={randomPrompt && 'live-link'}>
     <img src={imageURL} alt='' />
 
     {#if randomPrompt}
