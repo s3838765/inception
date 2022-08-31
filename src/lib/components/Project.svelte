@@ -33,7 +33,7 @@
 
 <div class='project-container {reversed && 'reversed'}'>
   <div class='info-container'>
-    <a href={link} target='_blank'>{name}</a>
+    <a href={link} target='_blank' style='--colour: {colour}'>{name}</a>
     <div class='technologies-container'>
       {#each technologies as technology}
         <span class='technology' style='--colour: {colour}'>{technology}</span>
@@ -86,15 +86,6 @@
         }
 
       }
-
-      /* Images with live links
-      img {
-        transition: all 0.15s ease;
-
-        &:hover {
-          filter: brightness(0.4) blur(1px);
-        }
-      } */
     }
 
     /* Project images */
@@ -118,13 +109,28 @@
     gap: .5em;
     min-width: 35%;
 
-    /* TODO: underline animation on hover */
     a {
+      position: relative;
       color: var(--text);
       width: max-content;
       font-size: 2em;
       font-weight: bold;
       text-decoration: none;
+
+      &:hover:before {
+        width: 100%;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 5%;
+        width: 0;
+        height: 2px;
+        background-color: var(--colour);
+        transition: width .25s ease;
+      }
     }
 
     /* Technology pills */

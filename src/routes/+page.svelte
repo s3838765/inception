@@ -82,22 +82,22 @@
       randomHue = getRandomHue()
     }} />
   </div>
-  <button class='light-dark-button' title={`Turn the lights ${theme === 'dark' ? 'on' : 'off'}`} on:click={toggleTheme}>
-    {#if theme === 'dark'}
-      <Lightbulb size={40} />
-    {:else if theme === 'light'}
-      <LightbulbOff size={40} />
-    {/if}
-  </button>
 
   {#each projects as project, idx}
     <Project {...project} reversed={idx % 2 === 1} theme={theme} colour={colour} />
   {/each}
+
+  <button class='light-dark-button' title={`Turn the lights ${theme === 'dark' ? 'on' : 'off'}`} on:click={toggleTheme}>
+    {#if theme === 'dark'}
+      <Lightbulb size={35} />
+    {:else if theme === 'light'}
+      <LightbulbOff size={35} />
+    {/if}
+  </button>
 </div>
 
 <style lang='scss'>
   .container {
-
     .header {
       display: flex;
       flex-direction: column;
