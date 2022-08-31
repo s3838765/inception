@@ -2,10 +2,11 @@
   import watchingyou from '$lib/assets/watchingyou.png'
 
   export let colour = 'hsl(0, 50%, 50%)'
+  export let changeHue = () => {}
 </script>
 
-<div class='circle' style='--colour: {colour}'>
-  <img src={watchingyou} alt=''>
+<div class='circle' style='--colour: {colour}' on:click={changeHue}>
+  <img src={watchingyou} alt='' on:click|stopPropagation>
 </div>
 
 <style lang='scss'>
@@ -27,5 +28,6 @@
     top: 0;
     width: calc(var(--size) / 1.75);
     transform: translate(2.5%, 10%);
+    user-select: none;
   }
 </style>
