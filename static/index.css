@@ -4,7 +4,7 @@
 
 body {
   font-family: 'Poppins';
-  padding: 2em;
+  padding: 5em;
   margin: 0;
   display: flex;
   align-items: center;
@@ -13,14 +13,20 @@ body {
   color: var(--text);
 }
 
+@media (max-width: 500px) {
+  body {
+    padding: 2em;
+  }
+}
+
 .dark {
   --text: hsl(0, 0%, 95%);
   --background: hsl(0, 0%, 7%);
-  /* background-color: var(--background); */
-  /* color: var(--text); */
+  --surface: hsl(0, 0%, 15%);
 }
 
 .light {
   --text: hsl(0, 0%, 5%);
   --background: hsl(0, 0%, 95%);
+  --surface: hsl(0, 0%, 87.5%);
 }

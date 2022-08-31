@@ -25,12 +25,7 @@
   export let colour = 'hsl(0, 50%, 50%)'
 </script>
 
-<div class='project-container'>
-  {#if reversed}
-    <a href={live} target='_blank'>
-      <img src={imageURL} alt='' />
-    </a>
-  {/if}
+<div class='project-container {reversed && 'reversed'}'>
   <div class='info-container'>
     <a href={link} target='_blank'>{name}</a>
     <div class='technologies-container'>
@@ -40,11 +35,9 @@
     </div>
     <span>{description}</span>
   </div>
-  {#if !reversed}
-    <a href={live} target='_blank'>
-      <img src={imageURL} alt='' />
-    </a>
-  {/if}
+  <a href={live} target='_blank'>
+    <img src={imageURL} alt='' />
+  </a>
 </div>
 
 <style lang='scss'>
@@ -54,11 +47,23 @@
     gap: 3em;
   }
 
+  .reversed {
+    flex-direction: row-reverse;
+  }
+
+  @media (max-width: 1000px) {
+    .project-container {
+      gap: 1em;
+      flex-direction: column;
+    }
+  }
+
   .info-container {
     display: flex;
     flex-direction: column;
     flex: 1;
     gap: .5em;
+    min-width: 35%;
 
     /* TODO: underline animation on hover */
     a {
@@ -85,6 +90,7 @@
 
   img {
     max-width: 50em;
+    width: 100%;
     display: block;
   }
 </style>

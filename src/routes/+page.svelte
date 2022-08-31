@@ -1,9 +1,10 @@
 <script lang='ts'>
   import StyledPortrait from '$lib/components/StyledPortrait.svelte'
   import Project from '$lib/components/Project.svelte'
+  import Popup from '$lib/components/Popup.svelte'
   import projects from '$lib/assets/projects.json'
   import { onMount } from 'svelte'
-  import { Lightbulb, LightbulbOff } from 'lucide-svelte'
+  import { Lightbulb, LightbulbOff, Github, Linkedin } from 'lucide-svelte'
 
   // Set random hue and change the colour whenever the hue changes
   function getRandomHue() {
@@ -12,13 +13,21 @@
   let randomHue = getRandomHue()
   $: colour = `hsl(${randomHue}, 50%, 50%)`
 
+  // Count how many times the user switches the light
+  let lightCount = 0
+  let popupOpen = false
+
   // Set initial theme based on user's preference in localstorage
   let theme: string | null = null
   onMount(async () => {
-    let darkScheme = window.matchMedia('(prefers-color-scheme: dark)')
-    theme = darkScheme.matches ? 'dark' : 'light'
-    localStorage.setItem('theme', theme)
+    theme = localStorage.getItem('theme')
+    if (!theme) {
+      let darkScheme = window.matchMedia('(prefers-color-scheme: dark)')
+      theme = darkScheme.matches ? 'dark' : 'light'
+      localStorage.setItem('theme', theme)
+    }
     document.body.classList.add(theme)
+
 
     // TODO: unsubscribe?
     return 
@@ -30,23 +39,50 @@
     const currTheme = localStorage.getItem('theme');
     const newTheme = currTheme === 'dark' ? 'light' : 'dark'
 
+    // Lights have broken
+    if (lightCount > 10 && theme === 'dark') {
+      popupOpen = true
+      return
+    }
+
     // Set theme in body class list and localstorage
     if (currTheme) document.body.classList.remove(currTheme)
     document.body.classList.toggle(newTheme);
     localStorage.setItem('theme', newTheme)
     theme = localStorage.getItem('theme')
+
+    lightCount++
   }
 
 </script>
 
+
+{#if popupOpen}
+  <Popup
+    title='Oh no!'
+    description={'You\'ve broken the light switch!'}
+    colour={colour}
+    closeFn={() => popupOpen = false} />
+{/if}
+
 <div class='container'>
   <div class='header'>
     <h1>Thomas Dib</h1>
+    <div class="links-container">
+      <a href='https://github.com/tdib' target='_blank'>
+        <Github />
+        GitHub
+      </a>
+      <a href='https://linkedin.com/in/tdib' target='_blank'>
+        <Linkedin />
+        LinkedIn
+      </a>
+    </div>
     <StyledPortrait colour={colour} changeHue={() => {
       randomHue = getRandomHue()
     }} />
   </div>
-  <button class='light-dark-button' title='Toggle dark theme' on:click={toggleTheme}>
+  <button class='light-dark-button' title={`Turn the lights ${theme === 'dark' ? 'on' : 'off'}`} on:click={toggleTheme}>
     {#if theme === 'dark'}
       <Lightbulb size={40} />
     {:else if theme === 'light'}
@@ -57,11 +93,11 @@
   {#each projects as project, idx}
     <Project {...project} reversed={idx % 2 === 1} theme={theme} colour={colour} />
   {/each}
-
 </div>
 
 <style lang='scss'>
   .container {
+
     .header {
       display: flex;
       flex-direction: column;
@@ -69,6 +105,24 @@
 
       h1 {
         font-size: 3rem;
+        margin-block-end: 0;
+      }
+
+      .links-container {
+        display: flex;
+        gap: 3em;
+        margin-block: 2em;
+        
+        a {
+          display: flex;
+          gap: 1em;
+          color: var(--text);
+          background-color: var(--surface);
+          text-decoration: none;
+          padding: 1em 2em;
+          border-radius: 5em;
+          font-weight: bold;
+        }
       }
     }
 
