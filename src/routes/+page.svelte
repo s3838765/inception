@@ -49,7 +49,6 @@
 
     lightCount++
   }
-
 </script>
 
 <!-- Broken light popup -->
@@ -61,7 +60,15 @@
     closeFn={() => popupOpen = false} />
 {/if}
 
-<div class='container'>
+<div class='container' style='--colour: {colour}' inert={popupOpen || null}>
+  <button class='light-dark-button' title={`Turn the lights ${theme === 'dark' ? 'on' : 'off'}`} on:click={toggleTheme}>
+    {#if theme === 'dark'}
+      <Lightbulb size={35} />
+    {:else if theme === 'light'}
+      <LightbulbOff size={35} />
+    {/if}
+  </button>
+
   <div class='header'>
     <h1>Thomas Dib</h1>
 
@@ -85,17 +92,14 @@
     <Project {...project} reversed={idx % 2 === 1} theme={theme} colour={colour} />
   {/each}
 
-  <button class='light-dark-button' title={`Turn the lights ${theme === 'dark' ? 'on' : 'off'}`} on:click={toggleTheme}>
-    {#if theme === 'dark'}
-      <Lightbulb size={35} />
-    {:else if theme === 'light'}
-      <LightbulbOff size={35} />
-    {/if}
-  </button>
 </div>
 
 <style lang='scss'>
   .container {
+    *:focus-visible {
+      outline: 3px solid var(--colour);
+      border-radius: .1em;
+    }
     .header {
       display: flex;
       flex-direction: column;

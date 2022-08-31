@@ -33,14 +33,13 @@
   const randomPrompt = prompts[Math.floor(Math.random() * prompts.length)]
 </script>
 
-<div class='project-container {reversed && 'reversed'}'>
-
+<div class='project-container {reversed && 'reversed'}' style='--colour: {colour}'>
   <div class='info-container'>
-    <a href={link} target='_blank' style='--colour: {colour}'>{name}</a>
+    <a href={link} target='_blank' >{name}</a>
 
     <div class='technologies-container'>
       {#each technologies as technology}
-        <span class='technology' style='--colour: {colour}'>{technology}</span>
+        <span class='technology'>{technology}</span>
       {/each}
     </div>
 
@@ -58,6 +57,10 @@
 
 <style lang='scss'>
   .project-container {
+    *:focus-visible {
+      outline: 3px solid var(--colour);
+      border-radius: .1em;
+    }
     display: flex;
     width: 100%;
     gap: 3em;
@@ -81,17 +84,15 @@
         opacity: 0;
       }
 
-      &:hover {
+      &:hover, &:focus {
         img {
           transition: all .2s ease;
           filter: brightness(0.4) blur(1px);
         }
-
         span {
-        transition: all .2s ease;
-        opacity: 1;
+          transition: all .2s ease;
+          opacity: 1;
         }
-
       }
     }
 
@@ -100,6 +101,7 @@
       max-width: 50em;
       width: 100%;
       display: block;
+      border-radius: .3em;
     }
   }
 

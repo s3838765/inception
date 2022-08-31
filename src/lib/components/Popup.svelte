@@ -5,7 +5,7 @@
   export let closeFn: () => {}
 </script>
 
-<div class='container' on:click|self={closeFn}>
+<div class='container'>
   <div class='panel'>
     <h1>{title}</h1>
     <p>{description}</p>
