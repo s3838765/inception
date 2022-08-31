@@ -19,7 +19,9 @@
     // Theme switch logic - relating to the image URL
     const otherTheme = theme === 'dark' ? 'light' : 'dark'
     processedName = processedName.replace(`-${otherTheme}`, `-${theme}`)
-    imageURL = new URL(`../assets/project-images/${processedName}.png`, import.meta.url).href
+    if (['-dark', '-light'].some((val) => processedName.includes(val))) {
+      imageURL = new URL(`../assets/project-images/${processedName}.png`, import.meta.url).href
+    }
   }
 
   // Handle dynamic prompts
@@ -32,17 +34,22 @@
 </script>
 
 <div class='project-container {reversed && 'reversed'}'>
+
   <div class='info-container'>
     <a href={link} target='_blank' style='--colour: {colour}'>{name}</a>
+
     <div class='technologies-container'>
       {#each technologies as technology}
         <span class='technology' style='--colour: {colour}'>{technology}</span>
       {/each}
     </div>
+
     <span>{description}</span>
   </div>
+
   <a href={live} target='_blank' class={randomPrompt && 'live-link'}>
     <img src={imageURL} alt='' />
+
     {#if randomPrompt}
       <span>{randomPrompt}</span>
     {/if}
@@ -156,4 +163,3 @@
     }
   }
 </style>
- 
