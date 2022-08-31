@@ -6,12 +6,16 @@
 </script>
 
 <div class='container'>
-  <div class='panel'>
+  <div class='panel' on:keydown={(e) => {
+    if (e.key === 'Escape') closeFn()
+  }}>
     <h1>{title}</h1>
     <p>{description}</p>
     <button
+      autofocus
       style='--colour: {colour}'
-      on:click={closeFn}>Browse in darkness</button>
+      on:click={closeFn}
+    >Browse in darkness</button>
   </div>
 </div>
 

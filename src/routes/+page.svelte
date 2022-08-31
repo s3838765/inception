@@ -51,6 +51,21 @@
   }
 </script>
 
+<!-- Theme toggle button -->
+<button
+  id='top'
+  class='light-dark-button'
+  title={`Turn the lights ${theme === 'dark' ? 'on' : 'off'}`}
+  on:click={toggleTheme}
+  style='--colour: {colour}'
+>
+  {#if theme === 'dark'}
+    <Lightbulb size={35} />
+  {:else if theme === 'light'}
+    <LightbulbOff size={35} />
+  {/if}
+</button>
+
 <!-- Broken light popup -->
 {#if popupOpen}
   <Popup
@@ -61,14 +76,8 @@
 {/if}
 
 <div class='container' style='--colour: {colour}' inert={popupOpen || null}>
-  <button class='light-dark-button' title={`Turn the lights ${theme === 'dark' ? 'on' : 'off'}`} on:click={toggleTheme}>
-    {#if theme === 'dark'}
-      <Lightbulb size={35} />
-    {:else if theme === 'light'}
-      <LightbulbOff size={35} />
-    {/if}
-  </button>
 
+  <!-- Header information (name, links, image) -->
   <div class='header'>
     <h1>Thomas Dib</h1>
 
@@ -90,24 +99,44 @@
   {#each projects as project, idx}
     <Project {...project} reversed={idx % 2 === 1} theme={theme} colour={colour} />
   {/each}
+
+  <a href='#top' title='Back to top' class='back-to-top' >
+    <ChevronUp />
+  </a>
 </div>
 
-<a href='#top' title='Back to top' class='back-to-top'>
-  <ChevronUp />
-</a>
 
 <style lang='scss'>
+  *:focus-visible {
+    /* Fallback in case colour is not set for whatever reason */
+    outline: 3px solid white;
+    outline: 3px solid var(--colour);
+    border-radius: .1em;
+  }
+
+  .light-dark-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2em;
+    background: none;
+    border: none;
+    color: var(--text);
+    scroll-margin: 2em;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 7em;
     padding: 5em;
+    padding-block-end: 0;
 
-    *:focus-visible {
-      outline: 3px solid var(--colour);
-      border-radius: .1em;
-    }
     .header {
       display: flex;
       flex-direction: column;
@@ -123,9 +152,6 @@
         gap: 3em;
         margin-block: 2em;
 
-        @media (max-width: 500px) {
-        }
-        
         a {
           display: flex;
           gap: 1em;
@@ -138,31 +164,18 @@
         }
       }
     }
-  }
 
-  .light-dark-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 2em;
-    background: none;
-    border: none;
-    color: var(--text);
-
-    &:hover {
-      cursor: pointer;
+    .back-to-top {
+      color: var(--text);
+      background-color: var(--surface);
+      border-radius: 1em 1em 0em 0em;
+      display: flex;
+      width: 5em;
+      justify-content: center;
+      margin-inline: auto;
     }
   }
 
-  .back-to-top {
-    color: var(--text);
-    background-color: var(--surface);
-    border-radius: 1em 1em 0em 0em;
-    display: flex;
-    width: 5em;
-    justify-content: center;
-    margin-inline: auto;
-  }
 
   @media (max-width: 500px) {
     .container {
