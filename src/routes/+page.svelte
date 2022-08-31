@@ -180,13 +180,14 @@
   @media (max-width: 500px) {
     .container {
       padding: 2em;
+
+      .header .social-links {
+        flex-direction: column;
+        gap: 1em;
+        margin-block-start: 1em;
+      }
     }
 
-    .social-links {
-      flex-direction: column;
-      gap: 1em;
-      margin-block-start: 1em;
-    }
   }
 
 </style>
