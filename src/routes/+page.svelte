@@ -68,7 +68,7 @@
 <div class='container'>
   <div class='header'>
     <h1>Thomas Dib</h1>
-    <div class="links-container">
+    <div class='social-links'>
       <a href='https://github.com/tdib' target='_blank'>
         <Github />
         GitHub
@@ -108,10 +108,16 @@
         margin-block-end: 0;
       }
 
-      .links-container {
+      .social-links {
         display: flex;
         gap: 3em;
         margin-block: 2em;
+
+        @media (max-width: 500px) {
+          flex-direction: column;
+          gap: 1em;
+          margin-block-start: 1em;
+        }
         
         a {
           display: flex;
@@ -146,6 +152,7 @@
 
     color: var(--text);
   }
+
 
 
 </style>
