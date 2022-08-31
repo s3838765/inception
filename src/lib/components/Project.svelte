@@ -9,20 +9,13 @@
   $: { 
     // Initially append theme
     if (!(processedName.endsWith('-dark') || processedName.endsWith('-light')) && theme) {
-      const otherTheme = theme === 'dark' ? 'light' : 'dark'
-      processedName += `-${otherTheme}`
-      console.log(processedName, 'initial');
+      processedName += `-${theme}`
     }
 
+    // Theme switch logic - relating to the image URL
     const otherTheme = theme === 'dark' ? 'light' : 'dark'
-    console.log(theme, otherTheme);
     processedName = processedName.replace(`-${otherTheme}`, `-${theme}`)
-    // if (processedName.endsWith('-dark')) processedName = processedName.replace('-dark', '-light')
-    // else if (processedName.endsWith('-light')) processedName = processedName.replace('-light', '-dark')
-    console.log(processedName);
     imageURL = new URL(`../assets/project-images/${processedName}.png`, import.meta.url).href
-    // console.log(imageURL);
-
   }
 
   export let link: string | null = null
