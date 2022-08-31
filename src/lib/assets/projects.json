@@ -2,11 +2,10 @@
   {
     "name": "Automatarium",
     "technologies": ["React", "Express"],
-    "description": "A modern take on JFLAP used for the Computing Theory course at RMIT University.",
+    "description": "A modern take on the educational software JFLAP, used for the Computing Theory course at RMIT University.",
     "link": "https://github.com/automatarium/automatarium",
     "live": "http://automatarium.tdib.xyz",
-    "prompt": [
-      "Click here to view a live version of Automatarium!",
+    "prompts": [
       "Do you like automata? If so, click here to view the project!",
       "Clicking here will AUTOMATAke you to Automatarium :)"
     ]
@@ -17,17 +16,17 @@
     "description": "A simple implementation of Stephen Wolfram's elementary cellular automata.",
     "link": "https://github.com/tdib/elementary-ca",
     "live": "https://elementaryca.tdib.xyz",
-    "prompt": [
+    "prompts": [
       "Click here to view the elementary cellular automata playground!"
     ]
   },
   {
     "name": "Inception",
-    "technologies": ["React"],
+    "technologies": ["Svelte"],
     "description": "The site you are currently looking at.",
     "link": "https://github.com/tdib/inception",
     "live": "https://tdib.xyz",
-    "prompt": [
+    "prompts": [
       "Click here if you want a new tab of the same site :^)",
       "You're already on the site but if you want another instance, just click here.",
       "Click here to view a live version of tdib.xyz! Wait... You're already here!"

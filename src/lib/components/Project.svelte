@@ -3,7 +3,11 @@
   export let technologies: string[] = []
   export let description: string = 'Project description.'
   export let theme: string | null = null
+  export let link: string | null = null
+  export let reversed: boolean = false
+  export let colour = 'hsl(0, 50%, 50%)'
 
+  // Handle image URL processing - switching between light and dark images
   let imageURL: string | null = null
   let processedName = name.toLowerCase().replace(' ', '-')
   $: { 
@@ -18,11 +22,13 @@
     imageURL = new URL(`../assets/project-images/${processedName}.png`, import.meta.url).href
   }
 
-  export let link: string | null = null
+  // Handle dynamic prompts
   export let live: string | null = null
-  export let prompt: string[] = []
-  export let reversed: boolean = false
-  export let colour = 'hsl(0, 50%, 50%)'
+  export let prompts: string[] = []
+  // Add generic prompt if there is a link
+  if (live) prompts.push(`Click here to view a live version of ${name}!`)
+  // Randomly select prompt to use on hover of images
+  const randomPrompt = prompts[Math.floor(Math.random() * prompts.length)]
 </script>
 
 <div class='project-container {reversed && 'reversed'}'>
@@ -35,8 +41,11 @@
     </div>
     <span>{description}</span>
   </div>
-  <a href={live} target='_blank'>
+  <a href={live} target='_blank' class={randomPrompt && 'live-link'}>
     <img src={imageURL} alt='' />
+    {#if randomPrompt}
+      <span>{randomPrompt}</span>
+    {/if}
   </a>
 </div>
 
@@ -45,19 +54,63 @@
     display: flex;
     width: 100%;
     gap: 3em;
+  
+    /* a tags with live links */
+    .live-link {
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+
+      /* Prompt w/ live link */
+      span {
+        color: white;
+        position: absolute;
+        box-sizing: border-box;
+        width: 80%;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+      }
+
+      &:hover {
+        img {
+          transition: all .2s ease;
+          filter: brightness(0.4) blur(1px);
+        }
+
+        span {
+        transition: all .2s ease;
+        opacity: 1;
+        }
+
+      }
+
+      /* Images with live links
+      img {
+        transition: all 0.15s ease;
+
+        &:hover {
+          filter: brightness(0.4) blur(1px);
+        }
+      } */
+    }
+
+    /* Project images */
+    img {
+      max-width: 50em;
+      width: 100%;
+      display: block;
+    }
   }
 
+  /* Determine whether images are on left or right of info */
   .reversed {
     flex-direction: row-reverse;
   }
 
-  @media (max-width: 1000px) {
-    .project-container {
-      gap: 1em;
-      flex-direction: column;
-    }
-  }
-
+  /* All text relating to a project */
   .info-container {
     display: flex;
     flex-direction: column;
@@ -74,6 +127,7 @@
       text-decoration: none;
     }
 
+    /* Technology pills */
     .technologies-container {
       display: flex;
       gap: 1em;
@@ -88,10 +142,12 @@
     }
   }
 
-  img {
-    max-width: 50em;
-    width: 100%;
-    display: block;
+  /* Put images under information section */
+  @media (max-width: 1000px) {
+    .project-container {
+      gap: 1em;
+      flex-direction: column;
+    }
   }
 </style>
  
