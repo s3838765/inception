@@ -1,31 +1,29 @@
 <script lang='ts'>
-  import { onMount } from 'svelte'
   export let name: string = 'Project Name'
   export let technologies: string[] = []
   export let description: string = 'Project description.'
+  export let theme: string | null = null
 
   let imageURL: string | null = null
-  onMount(async () => {
-    // Take name of project, lowercase, and replace spaces with "-"
-    let processedName = name.toLowerCase().replace(' ', '-')
-    // Append dark or light to the name
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)')
-    processedName += darkScheme.matches ? '-dark' : '-light'
-    // Construct image URL based on the theme
-    onColorChange()
-    function onColorChange() {
-      if (darkScheme.matches) {
-        processedName = processedName.replace('-light', '-dark')
-      } else {
-        processedName = processedName.replace('-dark', '-light')
-      }
-      imageURL = new URL(`../assets/project-images/${processedName}.png`, import.meta.url).href
+  let processedName = name.toLowerCase().replace(' ', '-')
+  $: { 
+    // Initially append theme
+    if (!(processedName.endsWith('-dark') || processedName.endsWith('-light')) && theme) {
+      const otherTheme = theme === 'dark' ? 'light' : 'dark'
+      processedName += `-${otherTheme}`
+      console.log(processedName, 'initial');
     }
 
-    darkScheme.addEventListener('change', onColorChange)
-    
-    return () => darkScheme.removeEventListener('change', onColorChange);
-  })
+    const otherTheme = theme === 'dark' ? 'light' : 'dark'
+    console.log(theme, otherTheme);
+    processedName = processedName.replace(`-${otherTheme}`, `-${theme}`)
+    // if (processedName.endsWith('-dark')) processedName = processedName.replace('-dark', '-light')
+    // else if (processedName.endsWith('-light')) processedName = processedName.replace('-light', '-dark')
+    console.log(processedName);
+    imageURL = new URL(`../assets/project-images/${processedName}.png`, import.meta.url).href
+    // console.log(imageURL);
+
+  }
 
   export let link: string | null = null
   export let live: string | null = null
@@ -69,12 +67,13 @@
     flex: 1;
     gap: .5em;
 
+    /* TODO: underline animation on hover */
     a {
+      color: var(--text);
       width: max-content;
       font-size: 2em;
       font-weight: bold;
       text-decoration: none;
-      color: currentColor;
     }
 
     .technologies-container {
@@ -96,3 +95,49 @@
     display: block;
   }
 </style>
+  <!-- {
+    "name": "Elementary CA",
+    "technologies": ["HTML", "CSS", "Javascript"],
+    "description": "A simple implementation of Stephen Wolfram's elementary cellular automata.",
+    "link": "https://github.com/tdib/elementary-ca",
+    "live": "https://elementaryca.tdib.xyz",
+    "prompt": [
+      "Click here to view the elementary cellular automata playground!"
+    ]
+  },
+  {
+    "name": "Inception",
+    "technologies": ["React"],
+    "description": "The site you are currently looking at.",
+    "link": "https://github.com/tdib/inception",
+    "live": "https://tdib.xyz",
+    "prompt": [
+      "Click here if you want a new tab of the same site :^)",
+      "You're already on the site but if you want another instance, just click here.",
+      "Click here to view a live version of tdib.xyz! Wait... You're already here!"
+    ]
+  },
+  {
+    "name": "ListThis",
+    "technologies": ["React", "Express"],
+    "description": "A web application built with cloud services for personal or collaborative checklists.",
+    "link": "https://github.com/tdib/listthis"
+  },
+  {
+    "name": "VSFS",
+    "technologies": ["Java"],
+    "description": "Very Simple File System; a text based file system that allows you to store any type of file.",
+    "link": "https://github.com/tdib/VSFS"
+  },
+  {
+    "name": "Maze Pathfinder",
+    "technologies": ["C++"],
+    "description": "A pathfinder that navigates ASCII mazes.",
+    "link": "https://github.com/tdib/maze-pathfinder"
+  },
+  {
+    "name": "Qwirkle",
+    "technologies": ["C++"],
+    "description": "A CLI implementation of the board game Qwirkle.",
+    "link": "https://github.com/tdib/qwirkle"
+  } -->

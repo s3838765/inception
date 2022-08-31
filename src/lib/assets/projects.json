@@ -10,52 +10,7 @@
       "Do you like automata? If so, click here to view the project!",
       "Clicking here will AUTOMATAke you to Automatarium :)"
     ]
-  },
-  {
-    "name": "Elementary CA",
-    "technologies": ["HTML", "CSS", "Javascript"],
-    "description": "A simple implementation of Stephen Wolfram's elementary cellular automata.",
-    "link": "https://github.com/tdib/elementary-ca",
-    "live": "https://elementaryca.tdib.xyz",
-    "prompt": [
-      "Click here to view the elementary cellular automata playground!"
-    ]
-  },
-  {
-    "name": "Inception",
-    "technologies": ["React"],
-    "description": "The site you are currently looking at.",
-    "link": "https://github.com/tdib/inception",
-    "live": "https://tdib.xyz",
-    "prompt": [
-      "Click here if you want a new tab of the same site :^)",
-      "You're already on the site but if you want another instance, just click here.",
-      "Click here to view a live version of tdib.xyz! Wait... You're already here!"
-    ]
-  },
-  {
-    "name": "ListThis",
-    "technologies": ["React", "Express"],
-    "description": "A web application built with cloud services for personal or collaborative checklists.",
-    "link": "https://github.com/tdib/listthis"
-  },
-  {
-    "name": "VSFS",
-    "technologies": ["Java"],
-    "description": "Very Simple File System; a text based file system that allows you to store any type of file.",
-    "link": "https://github.com/tdib/VSFS"
-  },
-  {
-    "name": "Maze Pathfinder",
-    "technologies": ["C++"],
-    "description": "A pathfinder that navigates ASCII mazes.",
-    "link": "https://github.com/tdib/maze-pathfinder"
-  },
-  {
-    "name": "Qwirkle",
-    "technologies": ["C++"],
-    "description": "A CLI implementation of the board game Qwirkle.",
-    "link": "https://github.com/tdib/qwirkle"
   }
+
 
 ]

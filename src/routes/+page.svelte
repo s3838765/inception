@@ -5,41 +5,38 @@
   import { onMount } from 'svelte'
   import { Lightbulb, LightbulbOff } from 'lucide-svelte'
 
+  // Set random hue and change the colour whenever the hue changes
   function getRandomHue() {
     return Math.floor(Math.random() * 360)
   }
   let randomHue = getRandomHue()
-
   $: colour = `hsl(${randomHue}, 50%, 50%)`
 
+  // Set initial theme based on user's preference in localstorage
   let theme: string | null = null
-
   onMount(async () => {
-    // Set initial theme based on user's preference in localstorage
     let darkScheme = window.matchMedia('(prefers-color-scheme: dark)')
-    if (darkScheme.matches)
-        theme = document.body.classList.contains('light-mode') ? 'light' : 'dark'
-    else
-        theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light'
+    theme = darkScheme.matches ? 'dark' : 'light'
     localStorage.setItem('theme', theme)
-
+    document.body.classList.add(theme)
 
     // TODO: unsubscribe?
     return 
   })
 
-    // When the user toggles the theme, set in localstorage
-    function toggleTheme() {
-      console.log('changing theme');
-      let currTheme = localStorage.getItem('theme');
-      if (currTheme == 'dark')
-        document.body.classList.toggle('light-mode');
-      else if (currTheme == 'light')
-        document.body.classList.toggle('dark-mode');
-      localStorage.setItem('theme', currTheme === 'dark' ? 'light' : 'dark')
-    }
+  // When the user toggles the theme, set in localstorage
+  function toggleTheme() {
+    // Determine what the current and switching theme is
+    const currTheme = localStorage.getItem('theme');
+    const newTheme = currTheme === 'dark' ? 'light' : 'dark'
 
-  // let isDark = false
+    // Set theme in body class list and localstorage
+    if (currTheme) document.body.classList.remove(currTheme)
+    document.body.classList.toggle(newTheme);
+    localStorage.setItem('theme', newTheme)
+    theme = localStorage.getItem('theme')
+  }
+
 </script>
 
 <div class='container'>
@@ -49,16 +46,16 @@
       randomHue = getRandomHue()
     }} />
   </div>
-  <button class='light-dark-button'>
+  <button class='light-dark-button' title='Toggle dark theme' on:click={toggleTheme}>
     {#if theme === 'dark'}
-      <Lightbulb size={40} on:click={toggleTheme}/>
+      <Lightbulb size={40} />
     {:else if theme === 'light'}
-      <LightbulbOff size={40} onclick={toggleTheme}/>
+      <LightbulbOff size={40} />
     {/if}
   </button>
 
   {#each projects as project, idx}
-    <Project {...project} reversed={idx % 2 === 1} colour={colour} />
+    <Project {...project} reversed={idx % 2 === 1} theme={theme} colour={colour} />
   {/each}
 
 </div>
@@ -92,6 +89,8 @@
     &:hover {
       cursor: pointer;
     }
+
+    color: var(--text);
   }
 
 
