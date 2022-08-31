@@ -52,7 +52,7 @@
 
 </script>
 
-
+<!-- Broken light popup -->
 {#if popupOpen}
   <Popup
     title='Oh no!'
@@ -64,6 +64,7 @@
 <div class='container'>
   <div class='header'>
     <h1>Thomas Dib</h1>
+
     <div class='social-links'>
       <a href='https://github.com/tdib' target='_blank'>
         <Github />
@@ -74,6 +75,7 @@
         LinkedIn
       </a>
     </div>
+
     <StyledPortrait colour={colour} changeHue={() => {
       randomHue = getRandomHue()
     }} />

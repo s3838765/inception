@@ -21,11 +21,11 @@
     background-color: var(--colour);
     border-radius: 50%;
     margin: 0;
-    margin-block-end: 10em;
+    margin-block-end: 11em;
 
     @media (max-width: 500px) {
       --size: 15em;
-      margin-block-end: 5em;
+      margin-block-end: 6em;
     }
   }
 
