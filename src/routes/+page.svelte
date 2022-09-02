@@ -127,6 +127,11 @@
     &:hover {
       cursor: pointer;
     }
+
+    /* Push light closer to corner */
+    @media (max-width: 500px) {
+      margin: 1em .25em;
+    }
   }
 
   .container {
@@ -141,6 +146,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-align: center;
 
       h1 {
         font-size: 3rem;
@@ -180,6 +186,7 @@
   @media (max-width: 500px) {
     .container {
       padding: 2em;
+      padding-block-end: 0;
 
       .header .social-links {
         flex-direction: column;
