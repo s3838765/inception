@@ -1,7 +1,15 @@
 <script>
   import watchingyou from '$lib/assets/watchingyou.png'
+	import { onMount } from 'svelte';
 
   export let colour = 'hsl(0, 50%, 50%)'
+
+  // Set root variable to computed colour
+  onMount(() => {
+    const root = document.querySelector(':root')
+    root.style.setProperty('--colour', colour)
+  })
+
   export let changeHue = () => {}
 </script>
 

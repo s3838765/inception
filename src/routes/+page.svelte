@@ -57,7 +57,6 @@
   class='light-dark-button'
   title={`Turn the lights ${theme === 'dark' ? 'on' : 'off'}`}
   on:click={toggleTheme}
-  style='--colour: {colour}'
 >
   {#if theme === 'dark'}
     <Lightbulb size={35} />
@@ -71,11 +70,10 @@
   <Popup
     title='Oh no!'
     description={'You\'ve broken the light switch!'}
-    colour={colour}
     closeFn={() => popupOpen = false} />
 {/if}
 
-<div class='container' style='--colour: {colour}' inert={popupOpen || null}>
+<div class='container' inert={popupOpen || null}>
 
   <!-- Header information (name, links, image) -->
   <div class='header'>

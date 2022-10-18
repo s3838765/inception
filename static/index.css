@@ -2,6 +2,10 @@
   transition: background-color .3s ease;
 }
 
+*::selection {
+  background-color: var(--colour);
+}
+
 :root {
   color-scheme: light dark;
   scroll-behavior: smooth;

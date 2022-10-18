@@ -1,7 +1,6 @@
 <script lang='ts'>
   export let title: string | null = null
   export let description: string | null = null
-  export let colour: string | null = null
   export let closeFn: () => {}
 </script>
 
@@ -13,7 +12,6 @@
     <p>{description}</p>
     <button
       autofocus
-      style='--colour: {colour}'
       on:click={closeFn}
     >Browse in darkness</button>
   </div>
