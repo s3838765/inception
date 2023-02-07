@@ -1,16 +1,5 @@
 [
   {
-    "name": "Automatarium",
-    "technologies": ["React", "Express"],
-    "description": "A modern take on the educational software JFLAP, used for the Computing Theory course at RMIT University.",
-    "link": "https://github.com/automatarium/automatarium",
-    "live": "http://automatarium.tdib.xyz",
-    "prompts": [
-      "Do you like automata? If so, click here to view the project!",
-      "Clicking here will AUTOMATAke you to Automatarium :)"
-    ]
-  },
-  {
     "name": "Elementary",
     "technologies": ["HTML", "CSS", "Javascript"],
     "description": "A simple implementation of Stephen Wolfram's elementary cellular automata.",
@@ -31,6 +20,12 @@
       "You're already on the site but if you want another instance, just click here.",
       "Click here to view a live version of tdib.xyz! Wait... You're already here!"
     ]
+  },
+  {
+    "name": "Automatarium",
+    "technologies": ["React", "Express"],
+    "description": "A modern take on the educational software JFLAP, used for the Computing Theory course at RMIT University.",
+    "link": "https://github.com/automatarium/automatarium"
   },
   {
     "name": "ListThis",
