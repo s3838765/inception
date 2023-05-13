@@ -3,7 +3,7 @@
     "name": "Automatarium",
     "technologies": ["React", "Express"],
     "description": "A modern take on the educational software JFLAP, used for the Computing Theory course at RMIT University.",
-    "link": "https://github.com/automatarium/automatarium",
+    "repo": "https://github.com/automatarium/automatarium",
     "live": "https://automatarium.tdib.xyz",
     "prompts": [
       "Click here to view a live version of Automatarium!",
@@ -15,7 +15,7 @@
     "name": "Elementary",
     "technologies": ["HTML", "CSS", "Javascript"],
     "description": "A simple implementation of Stephen Wolfram's elementary cellular automata.",
-    "link": "https://github.com/tdib/elementary",
+    "repo": "https://github.com/tdib/elementary",
     "live": "https://elementary.tdib.xyz",
     "prompts": [
       "Click here to view the elementary cellular automata playground!"
@@ -25,7 +25,7 @@
     "name": "Inception",
     "technologies": ["Svelte"],
     "description": "The site you are currently looking at.",
-    "link": "https://github.com/tdib/inception",
+    "repo": "https://github.com/tdib/inception",
     "live": "https://tdib.xyz",
     "prompts": [
       "Click here if you want a new tab of the same site :^)",
@@ -35,9 +35,9 @@
   },
   {
     "name": "ListThis",
-    "technologies": ["React", "Express"],
+    "technologies": ["React"],
     "description": "A web application built with cloud services for personal or collaborative checklists. (Note: This project is currently in development and may not work as expected.)",
-    "link": "https://github.com/tdib/listthis",
+    "repo": "https://github.com/tdib/listthis",
     "live": "https://listthis.tdib.xyz",
     "prompts": [
       "Click here to view a live version of ListThis!",
@@ -49,18 +49,18 @@
     "name": "VSFS",
     "technologies": ["Java"],
     "description": "Very Simple File System; a text based file system that allows you to store any type of file.",
-    "link": "https://github.com/tdib/VSFS"
+    "repo": "https://github.com/tdib/VSFS"
   },
   {
     "name": "Maze Pathfinder",
     "technologies": ["C++"],
     "description": "A pathfinder that navigates ASCII mazes.",
-    "link": "https://github.com/tdib/maze-pathfinder"
+    "repo": "https://github.com/tdib/maze-pathfinder"
   },
   {
     "name": "Qwirkle",
     "technologies": ["C++"],
     "description": "A CLI implementation of the board game Qwirkle.",
-    "link": "https://github.com/tdib/qwirkle"
+    "repo": "https://github.com/tdib/qwirkle"
   }
 ]

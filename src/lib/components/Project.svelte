@@ -1,9 +1,10 @@
 <script lang='ts'>
+  import { Github, ExternalLink, Rocket, Globe } from 'lucide-svelte'
   export let name: string = 'Project Name'
   export let technologies: string[] = []
   export let description: string = 'Project description.'
   export let theme: string | null = null
-  export let link: string | null = null
+  export let repo: string | null = null
   export let reversed: boolean = false
   export let colour = 'hsl(0, 50%, 50%)'
 
@@ -35,7 +36,14 @@
 
 <div class='project-container {reversed && 'reversed'}' style='--colour: {colour}'>
   <div class='info-container'>
-    <a href={link} target='_blank' title='View source code'>{name}</a>
+    {#if live}
+      <a class='live-link-header' href={live} target='_blank' title={'View live version'}>
+        {name}
+        <ExternalLink />
+      </a>
+    {:else}
+      <h2>{name}</h2>
+    {/if}
 
     <div class='technologies-container'>
       {#each technologies as technology}
@@ -44,6 +52,10 @@
     </div>
 
     <span>{description}</span>
+
+    <a class='repo-link' href={repo} target='_blank' title='View source code'>
+      <Github />
+    </a>
   </div>
 
   <a href={live} target='_blank' title={randomPrompt && 'View live version'} class={randomPrompt && 'live-link'}>
@@ -86,7 +98,7 @@
 
       /* Blur/darken image, and add prompt text on hover over image (if applicable, i.e. if there is a live project link) */
       &:hover, &:focus {
-        border-radius: .3em;
+        border-radius: .5em;
         img {
           transition: all .2s ease;
           filter: brightness(0.4) blur(2px);
@@ -116,7 +128,7 @@
       max-width: 50em;
       width: 100%;
       display: block;
-      border-radius: .3em;
+      border-radius: .5em;
     }
   }
 
@@ -130,16 +142,24 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    gap: .5em;
+    gap: .75em;
     min-width: 35%;
 
-    a {
+    /* Title text styling */
+    .live-link-header, h2, a {
       position: relative;
+      margin: 0;
+      font-weight: bold;
+      font-size: 2em;
+      text-decoration: none;
       color: var(--text);
       width: max-content;
-      font-size: 2em;
-      font-weight: bold;
-      text-decoration: none;
+    }
+
+    /* Animated underline - Only for links with live versions */
+    .live-link-header, .repo-link {
+      position: relative;
+      width: max-content;
 
       &:hover:before {
         width: 100%;
