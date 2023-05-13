@@ -1,5 +1,17 @@
 [
   {
+    "name": "Automatarium",
+    "technologies": ["React", "Express"],
+    "description": "A modern take on the educational software JFLAP, used for the Computing Theory course at RMIT University.",
+    "link": "https://github.com/automatarium/automatarium",
+    "live": "https://automatarium.tdib.xyz",
+    "prompts": [
+      "Click here to view a live version of Automatarium!",
+      "Do you like automata? If so, click here to view the project!",
+      "Clicking here will AUTOMATAke you to Automatarium :)"
+    ]
+  },
+  {
     "name": "Elementary",
     "technologies": ["HTML", "CSS", "Javascript"],
     "description": "A simple implementation of Stephen Wolfram's elementary cellular automata.",
@@ -22,16 +34,16 @@
     ]
   },
   {
-    "name": "Automatarium",
-    "technologies": ["React", "Express"],
-    "description": "A modern take on the educational software JFLAP, used for the Computing Theory course at RMIT University.",
-    "link": "https://github.com/automatarium/automatarium"
-  },
-  {
     "name": "ListThis",
     "technologies": ["React", "Express"],
-    "description": "A web application built with cloud services for personal or collaborative checklists.",
-    "link": "https://github.com/tdib/listthis"
+    "description": "A web application built with cloud services for personal or collaborative checklists. (Note: This project is currently in development and may not work as expected.)",
+    "link": "https://github.com/tdib/listthis",
+    "live": "https://listthis.tdib.xyz",
+    "prompts": [
+      "Click here to view a live version of ListThis!",
+      "Need a list? Click here to check out ListThis!",
+      "Click here to try out your listing buddy, ListThis!"
+    ]
   },
   {
     "name": "VSFS",
