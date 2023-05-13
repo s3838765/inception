@@ -58,8 +58,8 @@
 <style lang='scss'>
   .project-container {
     *:focus-visible {
-      outline: 3px solid var(--colour);
       border-radius: .1em;
+      outline: 3px solid var(--colour);
     }
     display: flex;
     width: 100%;
@@ -84,16 +84,31 @@
         opacity: 0;
       }
 
+      /* Blur/darken image, and add prompt text on hover over image (if applicable, i.e. if there is a live project link) */
       &:hover, &:focus {
+        border-radius: .3em;
         img {
           transition: all .2s ease;
-          filter: brightness(0.4) blur(1px);
+          filter: brightness(0.4) blur(2px);
         }
         span {
           transition: all .2s ease;
           opacity: 1;
         }
       }
+
+      /* Return image back to original state after moving mouse away */
+      &:not(:hover):not(:focus) {
+        img {
+          transition: filter .2s ease-out;
+          filter: brightness(1) blur(0);
+        }
+        span {
+          transition: opacity .2s ease-out;
+          opacity: 0;
+        }
+      }
+      
     }
 
     /* Project images */
