@@ -51,19 +51,6 @@
   }
 </script>
 
-<!-- Theme toggle button -->
-<button
-  id='top'
-  class='light-dark-button'
-  title={`Turn the lights ${theme === 'dark' ? 'on' : 'off'}`}
-  on:click={toggleTheme}
->
-  {#if theme === 'dark'}
-    <Lightbulb size={35} />
-  {:else if theme === 'light'}
-    <LightbulbOff size={35} />
-  {/if}
-</button>
 
 <!-- Broken light popup -->
 {#if popupOpen}
@@ -73,7 +60,22 @@
     closeFn={() => popupOpen = false} />
 {/if}
 
+
 <div class='container' inert={popupOpen || null}>
+
+  <!-- Theme toggle button -->
+  <button
+    id='top'
+    class='light-dark-button'
+    title={`Turn the lights ${theme === 'dark' ? 'on' : 'off'}`}
+    on:click={toggleTheme}
+  >
+    {#if theme === 'dark'}
+      <Lightbulb size={35} />
+    {:else if theme === 'light'}
+      <LightbulbOff size={35} />
+    {/if}
+  </button>
 
   <!-- Header information (name, links, image) -->
   <div class='header'>
@@ -94,15 +96,16 @@
   </div>
 
   <!-- List of projects -->
-  {#each projects as project, idx}
-    <Project {...project} reversed={idx % 2 === 1} theme={theme} colour={colour} />
-  {/each}
+  <div class='projects'>
+    {#each projects as project, idx}
+      <Project {...project} reversed={idx % 2 === 1} theme={theme} colour={colour} />
+    {/each}
+  </div>
 
   <a href='#top' title='Back to top' class='back-to-top' >
     <ChevronUp />
   </a>
 </div>
-
 
 <style lang='scss'>
   *:focus-visible {
@@ -133,18 +136,17 @@
   }
 
   .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 7em;
-    padding: 5em;
-    padding-block-end: 0;
+    backdrop-filter: blur(150px);
+    position: absolute;
+    left: 0;
+    width: 100%;
 
     .header {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
+      padding-block: 5em;
 
       h1 {
         font-size: 3rem;
@@ -167,6 +169,16 @@
           font-weight: bold;
         }
       }
+    }
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7em;
+      padding: 5em;
+      max-width: 100em;
+      margin: auto;
     }
 
     .back-to-top {
