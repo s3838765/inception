@@ -119,13 +119,13 @@
     --topPct: ${position.y}%;
     --leftPct: ${position.x}%;
     --backgroundColour: ${newColour};
-    --opacity: ${isVisible ? 0.07 : 0};
+    --opacity: ${isVisible ? 0.08 : 0};
   `}
 />
 
 <style lang='scss'>
   .square {
-    transition: all 7s ease-in-out, background-color 1s ease-in-out, opacity 5s ease-in-out;
+    transition: all 7s ease-in-out, background-color 1s ease-in-out, opacity 3s ease-in-out;
     position: absolute;
     transform: translateX(-50%);
 
