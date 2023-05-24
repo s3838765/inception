@@ -119,7 +119,7 @@
     --topPct: ${position.y}%;
     --leftPct: ${position.x}%;
     --backgroundColour: ${newColour};
-    --opacity: ${isVisible ? 0.04 : 0};
+    --opacity: ${isVisible ? 0.07 : 0};
   `}
 />
 
@@ -127,6 +127,7 @@
   .square {
     transition: all 7s ease-in-out, background-color 1s ease-in-out, opacity 5s ease-in-out;
     position: absolute;
+    transform: translateX(-50%);
 
     opacity: var(--opacity);
     width: var(--computedWidthEm);
@@ -134,6 +135,5 @@
     top: var(--topPct);
     left: var(--leftPct);
     background-color: var(--backgroundColour);
-
   }
 </style>

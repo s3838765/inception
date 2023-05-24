@@ -43,5 +43,6 @@
     width: calc(var(--size) / 1.75);
     transform: translate(2.5%, 10%);
     user-select: none;
+    pointer-events: none;
   }
 </style>
