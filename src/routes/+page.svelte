@@ -21,6 +21,9 @@
   // Count how many times the user switches the light
   let lightCount = 0
   let popupOpen = false
+ 
+  // Flag for whether the user is using safari - the blur filter is broken on safari so we will disable it
+  let isSafari = true
 
   // Set initial theme based on user's preference in localstorage
   let theme: string | null = null
@@ -32,6 +35,9 @@
       localStorage.setItem('theme', theme)
     }
     document.body.classList.add(theme)
+
+    const userAgent = navigator.userAgent
+    isSafari = /^((?!chrome|android).)*safari/i.test(userAgent)
   })
 
   // When the user toggles the theme, set in localstorage
@@ -67,11 +73,13 @@
 
 <div class='global-container' inert={popupOpen || null}>
   <!-- Render all background blobs -->
-  <div class='blob-container'>
-    {#each blobPositions as blobPosition}
-      <Blob colour={colour} initialPosition={blobPosition} isVisible={isVisible}/>
-    {/each}
-  </div>
+  {#if !isSafari}
+    <div class='blob-container'>
+      {#each blobPositions as blobPosition}
+        <Blob colour={colour} initialPosition={blobPosition} isVisible={isVisible}/>
+      {/each}
+    </div>
+  {/if}
 
   <div class='main-content'>
     <!-- Theme toggle button -->
