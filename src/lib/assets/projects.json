@@ -1,7 +1,19 @@
 [
   {
+    "name": "Rubiskit",
+    "technologies": ["SvelteKit", "Threlte", "TypeScript"],
+    "description": "A virtual Rubik's cube with both 2D and 3D implementations. Ensure you pronounce it roo-biscuit, emphasis on the biscuit.",
+    "repo": "https://github.com/tdib/rubiskit",
+    "live": "https://rubiskit.tdib.xyz",
+    "prompts": [
+      "The Rubik's cube has 43,252,003,274,489,856,000 possible scrambles. Click here to try one of them!",
+      "Click here to view a live version of Rubiskit!",
+      "Feelin' hungry? Rubiskit"
+    ]
+  },
+  {
     "name": "Automatarium",
-    "technologies": ["React", "Express"],
+    "technologies": ["React", "Express", "TypeScript"],
     "description": "A modern take on the educational software JFLAP, used for the Computing Theory course at RMIT University.",
     "repo": "https://github.com/automatarium/automatarium",
     "live": "https://automatarium.tdib.xyz",
@@ -13,7 +25,7 @@
   },
   {
     "name": "Elementary",
-    "technologies": ["HTML", "CSS", "Javascript"],
+    "technologies": ["SvelteKit"],
     "description": "A simple implementation of Stephen Wolfram's elementary cellular automata.",
     "repo": "https://github.com/tdib/elementary",
     "live": "https://elementary.tdib.xyz",
@@ -23,7 +35,7 @@
   },
   {
     "name": "Inception",
-    "technologies": ["Svelte"],
+    "technologies": ["SvelteKit"],
     "description": "The site you are currently looking at.",
     "repo": "https://github.com/tdib/inception",
     "live": "https://tdib.xyz",
@@ -35,7 +47,7 @@
   },
   {
     "name": "ListThis",
-    "technologies": ["React"],
+    "technologies": ["React", "Google Cloud Platform"],
     "description": "A web application built with cloud services for personal or collaborative checklists. (Note: This project is currently in development and may not work as expected.)",
     "repo": "https://github.com/tdib/listthis",
     "live": "https://listthis.tdib.xyz",
