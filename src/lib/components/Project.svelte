@@ -1,12 +1,13 @@
 <script lang='ts'>
-  import { Github, ExternalLink, Rocket, Globe } from 'lucide-svelte'
+  import { Github, ExternalLink } from 'lucide-svelte'
+  import { hsl } from '$lib/stores/colour';
+
   export let name: string = 'Project Name'
   export let technologies: string[] = []
   export let description: string = 'Project description.'
   export let theme: string | null = null
   export let repo: string | null = null
   export let reversed: boolean = false
-  export let colour = 'hsl(0, 50%, 50%)'
 
   // Handle image URL processing - switching between light and dark images
   let imageURL: string | null = null
@@ -34,10 +35,10 @@
   const randomPrompt = prompts[Math.floor(Math.random() * prompts.length)]
 </script>
 
-<div class='project-container {reversed && 'reversed'}' style='--colour: {colour}'>
+<div class='project-container {reversed && 'reversed'}'>
   <div class='info-container'>
     {#if live}
-      <a class='live-link-header' href={live} target='_blank' title={'View live version'}>
+      <a class='live-link-header' href={live} target='_blank' rel='noreferrer' title={'View live version'}>
         {name}
         <ExternalLink />
       </a>
@@ -53,12 +54,12 @@
 
     <span>{description}</span>
 
-    <a class='repo-link' href={repo} target='_blank' title='View source code'>
+    <a class='repo-link' href={repo} target='_blank' rel='noreferrer' title='View source code'>
       <Github />
     </a>
   </div>
 
-  <a href={live} target='_blank' title={randomPrompt && 'View live version'} class={randomPrompt && 'live-link'}>
+  <a class={randomPrompt && 'live-link'} href={live} target='_blank' rel='noreferrer' title={randomPrompt && 'View live version'} >
     <img src={imageURL} alt='' />
 
     {#if randomPrompt}

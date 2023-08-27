@@ -10,6 +10,7 @@
   }}>
     <h1>{title}</h1>
     <p>{description}</p>
+    <!-- svelte-ignore a11y-autofocus -->
     <button
       autofocus
       on:click={closeFn}

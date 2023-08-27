@@ -1,19 +1,12 @@
 <script>
   import watchingyou from '$lib/assets/watchingyou.png'
-	import { onMount } from 'svelte';
+  import { updateHue } from '$lib/stores/colour';
 
-  export let colour = 'hsl(0, 50%, 50%)'
-
-  // Set root variable to computed colour
-  onMount(() => {
-    const root = document.querySelector(':root')
-    root.style.setProperty('--colour', colour)
-  })
-
-  export let changeHue = () => {}
 </script>
 
-<div class='circle' style='--colour: {colour}' on:click={changeHue}>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div class='circle' on:click={updateHue}>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
   <img src={watchingyou} alt='' on:click|stopPropagation>
 </div>
 
@@ -30,6 +23,10 @@
     border-radius: 50%;
     margin: 0;
     margin-block-end: 11em;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     @media (max-width: 500px) {
       --size: 15em;
