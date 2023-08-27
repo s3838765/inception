@@ -46,7 +46,7 @@ body {
 }
 
 .light {
-  --text: hsl(var(--hue), 50%, 5%);
+  --text: hsl(var(--hue), 50%, 10%);
   --background: linear-gradient(in oklab 180deg, hsl(var(--hue), 50%, 90%), hsl(var(--hue), 5%, 90%));
   --surface: hsl(var(--hue), 25%, 80%);
   --colour: hsl(var(--hue), 50%, 50%);

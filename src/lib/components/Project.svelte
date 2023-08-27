@@ -55,7 +55,7 @@
     <span>{description}</span>
 
     <a class='repo-link' href={repo} target='_blank' rel='noreferrer' title='View source code'>
-      <Github />
+      <Github />View source
     </a>
   </div>
 
@@ -147,7 +147,7 @@
     min-width: 35%;
 
     /* Title text styling */
-    .live-link-header, h2, a {
+    .live-link-header, h2 {
       position: relative;
       margin: 0;
       font-weight: bold;
@@ -155,6 +155,14 @@
       text-decoration: none;
       color: var(--text);
       width: max-content;
+    }
+
+    .repo-link {
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      gap: .5em;
+      margin-block-start: 1em;
     }
 
     /* Animated underline - Only for links with live versions */
