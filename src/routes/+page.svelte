@@ -127,11 +127,6 @@
     }
   }
 
-  .main-content {
-    background: var(--background);
-    color: var(--text);
-  }
-
   .header {
     display: flex;
     flex-direction: column;
